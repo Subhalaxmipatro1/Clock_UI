@@ -1,0 +1,167 @@
+﻿<Window x:Class="Clock_UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clock_UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Background="#F5FAFA">
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadow"
+                      Color="DarkGray"
+                      BlurRadius="25"
+                      ShadowDepth="10"
+                      Opacity="0.8"/>
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <CheckBox x:Name="FormatToggle"
+                      Content="24-Hour "                        
+                      FontSize="20"
+                      HorizontalAlignment="Center"
+                      Margin="300,-20,0,0"
+                      Foreground="Black"
+                      Checked="FormatToggle_Checked"
+                      Unchecked="FormatToggle_Unchecked"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <TextBlock x:Name="leftClockText"
+                       Text="00"
+                       FontSize="200"
+                       FontWeight="SemiBold"
+                       FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 mono"
+                       Foreground="Black"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                         Margin="20,0,20,0" 
+                            Effect="{DynamicResource DropShadow}"/>
+
+                        <Border x:Name="ColonBorder"
+                        BorderBrush="White"
+                        Height="89" Width="30"
+                        Background="White"   Margin="0,20,0,0"
+            BorderThickness="2"
+            CornerRadius="20"
+           HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+                            <TextBlock x:Name="ColonText"                         
+                   Text=":"
+                   FontSize="150"
+                   FontFamily="pack://application:,,,/Font/ds-digital/#DS-Digital"
+                   Foreground="Black"
+                   FontWeight="SemiBold"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Margin="0,-17,0,0" />
+
+                        </Border>
+
+                        <TextBlock x:Name="rightClockText"
+        Text="00"
+        FontSize="200"
+        FontWeight="SemiBold"
+        FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 mono"
+        Foreground="Black"
+         Margin="20,0,20,0"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+             Effect="{DynamicResource DropShadow}" />
+
+                    </StackPanel>
+                    <TextBlock x:Name="AmPmText"
+        FontSize="40"
+        FontWeight="SemiBold"
+        FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 Mono"
+        Foreground="Gray"
+        Margin="-25,125,0,0"
+        VerticalAlignment="Top"
+        Text="AM"
+        Visibility="Collapsed"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="00"
+                       FontSize="200"
+                       FontWeight="SemiBold"
+                       FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 mono"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="Gray"
+                       Opacity="0.25"
+                         Margin="20,0,10,0" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" />
+                            <TranslateTransform Y="194" />
+                            <TranslateTransform X="2"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Effect>
+                        <BlurEffect Radius="1" />
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <TextBlock Text=":"
+            FontWeight="SemiBold"
+         FontSize="150"
+ FontFamily="pack://application:,,,/Font/ds-digital/#DS-Digital"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="Gray"
+            Opacity="0.25">
+
+                </TextBlock>
+
+                <TextBlock Text="00"
+            FontSize="200"
+            FontWeight="SemiBold"
+            FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 mono"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="Gray"
+            Opacity="0.25"
+                             Margin="20,0,20,0" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" />
+                            <TranslateTransform Y="194" />
+                            <TranslateTransform X="0"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Effect>
+                        <BlurEffect Radius="1" />
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Height="40" Width="480"  Margin="0,176,0,0">
+                <TextBlock
+                    x:Name="ClockTextt"
+                    
+        Text="00 00"
+        FontSize="200"
+        FontWeight="SemiBold"
+        Background="#F5F6FA"
+        FontFamily="pack://application:,,,/Font/digital-7/#Digital-7 mono"
+        Foreground="Gray"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center" Margin="0,-30,0,0" Opacity="0.05"/>
+
+            </StackPanel>
+
+
+
+     
+
+    </Grid>
+
+
+    
+   
+</Window>
